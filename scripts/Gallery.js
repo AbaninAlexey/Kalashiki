@@ -3,6 +3,7 @@ class Gallery {
         root: '[data-js-section-gallery]',
         imageGallery: '[data-js-image-gallery]',
         image: '[data-js-image]',
+        
     }
 
     stateClasses = {
@@ -46,7 +47,7 @@ class Gallery {
             modal = document.querySelector('[data-js-modal]')
             image = document.querySelector('[data-js-modal-image]')
             closeButton = document.querySelector('[data-js-close-button]')
-            if ((e.target !== modal) && (e.target !== image) && (e.target != closeButton)) return
+            if ((e.target !== modal) && (e.target != closeButton)) return
             this.closeModal(e)
             this.lockBg()
         })
