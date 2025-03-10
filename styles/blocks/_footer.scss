@@ -1,0 +1,28 @@
+@use '../helpers' as *; 
+
+.footer {
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: rem(50);  
+
+        @include tablet {
+            flex-direction: column;
+            padding-block: rem(30);  
+            row-gap: rem(30);
+        }
+
+        @include mobile {
+            padding-block: rem(20); 
+        }
+    }
+
+    &__created {
+        color: var(--color-gray-dark);
+
+        @include hover {
+            color: rgb(239, 101, 8);
+        }
+    }
+}

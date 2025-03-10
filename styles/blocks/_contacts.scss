@@ -1,0 +1,87 @@
+@use '../helpers' as *; 
+
+.contacts {
+    &__inner {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        column-gap: rem(20);
+        padding-block: rem(30);
+        padding-inline: rem(118);
+
+        @include tablet {
+            flex-direction: column;
+            padding-block: rem(20);
+            row-gap: rem(20);
+            align-items: center;
+        }
+
+        @include mobile {
+            padding-block: rem(0) rem(30);
+        }
+
+    }
+
+    &__subtitle {
+        display: flex;
+        column-gap: rem(30);
+        a {
+            font-weight: 400;
+            text-decoration: none;
+            text-decoration: underline;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+
+        @include tablet {
+            row-gap: rem(20);
+        }
+    }
+
+    &__images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+        }
+    }
+
+    &__image {
+        max-width: 100%;
+        height: fluid(222, 150);
+        object-fit: cover;
+        width: fluid(222, 150);
+        max-height: 100%;
+
+        @include mobile {
+            &:nth-child(2) {
+                display: none;
+            }
+    
+            &:last-child {
+                display: none;
+            }
+        }
+
+        @include mobile-above {
+            &:first-child {
+                grid-area: 2 / 1 / 3 / 2;
+            }
+    
+            &:nth-child(2) {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+    
+            &:last-child {
+                grid-area: 2 / 3 / 3 / 4;
+            }
+        }
+    }
+}

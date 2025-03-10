@@ -1,0 +1,16 @@
+@use '../helpers' as *;
+
+.soc1als {
+    &__list {
+        display: flex;
+        align-items: center;
+        column-gap: rem(20);
+        color: var(--color-gray-dark);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+    }
+
+}

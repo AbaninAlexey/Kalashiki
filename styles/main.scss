@@ -1,0 +1,16 @@
+@use 'normalize';
+@use 'fonts';
+@use 'utils';
+@use 'variables';
+@use 'globals';
+
+@use './blocks/header';
+@use './blocks/soc1als';
+@use './blocks/logo';
+@use './blocks/burger-button';
+@use './blocks/cross-button';
+@use './blocks/hero';
+@use './blocks/gallery';
+@use './blocks/footer';
+@use './blocks/contacts';
+@use './blocks/video';

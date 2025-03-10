@@ -1,0 +1,48 @@
+@use '../helpers' as *; 
+
+.video {
+    padding-inline: rem(118);
+
+    @include tablet {
+        padding-inline: rem(60);
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(30);
+        padding-block: rem(30);
+
+        @include mobile {
+            padding-block: rem(15); 
+            row-gap: rem(15);
+            padding-block: rem(0) rem(30);
+        }
+    }
+    &__body {
+        display: block;
+        justify-content: center;
+    }
+
+    &__list {
+        display: grid;
+        justify-content: space-between;
+        gap: rem(20);
+        grid-template-columns: repeat(3, auto);
+
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__element {
+        z-index: 0;
+    }
+}

@@ -1,0 +1,24 @@
+@use 'helpers' as *;
+
+:root {
+    --color-white: #FFFFFF;
+    --color-main: #D1EEFF;
+    --color-main-alt: #E1F3FE;
+
+    --color-dark: #000000;
+
+    --color-gray: #878787;
+    --color-gray-dark: #484848;
+
+
+    --color-accent: #FF7A7A;
+    --color-accent-alt: #FFD2F8;
+
+    --font-family-main: 'Century Gothic', sans-serif;
+
+    --container-width: #{rem(1400)};
+    --container-padding-x: #{rem(16)};
+
+    --transition-duration: 0.2s;
+
+}

@@ -1,0 +1,143 @@
+@use '../helpers' as *;
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-main);
+    z-index: 2;
+
+    &__inner {
+        padding-block: rem(20);
+
+        @include mobile {
+            padding-block: rem(10);
+        }
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: fluid(155, 30);
+        
+
+        @include tablet {
+            column-gap: rem(30);
+        }
+
+        @include mobile {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            background-color: var(--color-main-alt);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 3rem;
+            width: 70%;
+            justify-content: start;
+            padding-block: rem(100);
+
+            &::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                background-color: var(--color-gray);
+                width: 30%;
+                height: 100%;
+                opacity: 0.5;
+
+            }
+
+            &:not(.is-active) {
+               @include hide;
+               translate: 100%;    
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: rem(15);
+    }
+
+    &__menu {
+
+        &-list {
+            display: flex;
+            align-items: start;
+            column-gap: rem(30);
+
+            @include tablet {
+                column-gap: rem(15);
+            }
+
+            @include mobile {
+                flex-direction: column;
+                row-gap: rem(30);
+            }
+        }
+
+        &-link {
+            color: var(--color-gray-dark);
+            &.is-active {
+                color: var(--color-black);
+
+            }
+
+            @include mobile {
+                font-size: rem(17);
+                color: var(--color-gray-dark);
+            }
+        }
+
+    }
+
+    &__cross-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__top-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 50%;
+        display: none;
+        color: var(--color-white);
+        background-color: var(--color-accent);
+        opacity: 0.4;
+        cursor: pointer;
+        z-index: -1;
+        padding: rem(10);
+        width: rem(55);
+        height: rem(55);
+
+        svg {
+            margin-block: auto;
+            @include abs-center;
+        }
+
+        &.is-active {
+            display: flex;
+        }
+
+        @include hover {
+            opacity: 0.9;
+            color: var(--color-main);
+            background-color: var(--color-accent);
+        }
+
+        @include mobile {
+            width: rem(40);
+            height: rem(40);
+        }
+    }
+
+}

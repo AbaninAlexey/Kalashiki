@@ -1,0 +1,52 @@
+@use '../helpers' as *; 
+
+.hero {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: rem(40);
+        padding-block: rem(30);
+
+        @include mobile {
+            padding: 0 0 rem(20) 0 ;
+            row-gap: rem(15);
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+
+        &-add {
+            @include mobile {
+                display: none;
+            }
+        }
+
+        @include mobile-s {
+            @include fluid-text(18, 16);
+        }
+    }
+
+    &__blockquote {
+        display: flex;
+        align-items: end;
+        flex-direction: column;
+        row-gap: rem(30);
+        margin-left: auto;
+        
+        &-text {
+            font-style: italic;
+        }
+
+        @include mobile {
+            row-gap: rem(5);
+            font-size: rem(13);
+        }
+    }
+}
